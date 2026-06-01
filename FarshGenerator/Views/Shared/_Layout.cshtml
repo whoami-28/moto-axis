@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MOTO-AXIS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lexend:wght@700;800&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+        darkMode: "class",
+        theme: {
+        extend: {
+        colors: {
+        "surface": "#051615",
+        "background": "#051615",
+        "on-background": "#d3e7e4",
+        "on-surface": "#d3e7e4",
+        "on-surface-variant": "#ddc0bd"
+        },
+        fontFamily: {
+        "headline": ["lexend"],
+        "body": ["inter"]
+        }
+        }
+        }
+        }
+    </script>
+    <style>
+        body {
+        background-color: #0f1617;
+        font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-on-background antialiased flex flex-col min-h-screen">
+    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+            <div class="text-2xl font-black italic text-red-600">
+                <a href="/">MOTO-AXIS</a>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-bold uppercase tracking-tighter text-sm">
+                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/Browse">Каталог</a>
+                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/Sell">Продать</a>
+                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/TechSpecs">ТТХ</a>
+                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/Messages">Сообщения</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="text-red-600 hover:text-red-400 p-2">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-lg font-black text-slate-100 italic">MOTO-AXIS</div>
+            <nav class="flex space-x-6 text-xs uppercase tracking-widest text-slate-500 font-bold">
+                <a class="hover:text-red-500" href="/Home/Privacy">Конфиденциальность</a>
+                <a class="hover:text-red-500" href="#">Поддержка</a>
+                <a class="hover:text-red-500" href="#">Дилеры</a>
+            </nav>
+            <div class="text-xs uppercase tracking-widest text-slate-500">
+                © 2026 MOTO-AXIS. ИНЖЕНЕРНАЯ ТОЧНОСТЬ.
+            </div>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

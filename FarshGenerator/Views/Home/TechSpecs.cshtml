@@ -1,0 +1,60 @@
+﻿@model FarshGenerator.Models.Listing
+@{
+    ViewData["Title"] = "Характеристики " + Model.Spec.Model;
+    var mainImg = Model.Images.FirstOrDefault(i => i.IsMain)?.ImageUrl ?? Model.Images.FirstOrDefault()?.ImageUrl ?? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80";
+}
+
+<section class="py-16 max-w-container-max mx-auto px-6">
+    <a asp-action="Browse" class="font-label-bold text-[#7da1b1] hover:text-on-surface uppercase flex items-center mb-8 transition-colors">
+        <span class="material-symbols-outlined mr-1">arrow_back</span> Назад в каталог
+    </a>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="relative rounded-DEFAULT overflow-hidden border-t border-[#7da1b1]/50 shadow-2xl h-[500px]">
+            <img src="@mainImg" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1617] to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 flex space-x-2">
+                <span class="bg-[#701217] text-white font-label-bold text-sm px-3 py-1 uppercase rounded-sm">@Model.Spec.Condition</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-center">
+            <h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight mb-2">
+                @Model.Spec.Brand.Name <span class="text-[#7da1b1]">@Model.Spec.Model</span>
+            </h1>
+            <p class="font-headline-md text-on-surface-variant mb-8">@Model.Price.ToString("N0") @Model.Currency</p>
+
+            <h3 class="font-label-bold uppercase text-[#7da1b1] border-b border-[#395462] pb-2 mb-4">Технические данные</h3>
+            <div class="grid grid-cols-1 border-l-4 border-[#701217]">
+                <div class="flex justify-between items-center bg-[#0f1617]/80 px-4 py-3">
+                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Мощность</span>
+                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.EnginePower л.с.</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#395462]/60 px-4 py-3">
+                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Объем двигателя</span>
+                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.EngineDisplacement cc</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#0f1617]/80 px-4 py-3">
+                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Привод</span>
+                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.DriveType</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#395462]/60 px-4 py-3">
+                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Трансмиссия</span>
+                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.Transmission</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#0f1617]/80 px-4 py-3">
+                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Год выпуска</span>
+                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.Year</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#395462]/60 px-4 py-3">
+                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Пробег</span>
+                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.Mileage км</span>
+                </div>
+            </div>
+
+            <button class="mt-10 bg-[#7da1b1] hover:bg-[#9db9c9] text-[#0f1617] font-label-bold uppercase py-4 rounded-DEFAULT transition-colors w-full flex justify-center items-center">
+                <span class="material-symbols-outlined mr-2">mail</span> Связаться с продавцом (@Model.Seller.Username)
+            </button>
+        </div>
+    </div>
+</section>

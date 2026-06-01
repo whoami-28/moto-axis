@@ -1,0 +1,68 @@
+﻿@model FarshGenerator.Models.ViewModels.SellViewModel
+@{
+    ViewData["Title"] = "Продать";
+}
+
+<section class="py-20 max-w-3xl mx-auto px-6">
+    <div class="bg-[#395462]/90 p-10 rounded-DEFAULT border-t border-[#7da1b1]/50 shadow-2xl">
+        <h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mb-2">Разместить объявление</h1>
+        <p class="font-body-md text-on-surface-variant mb-8">Ваша машина заслуживает достойного владельца. Заполните технические данные.</p>
+
+        <form asp-action="Sell" method="post" enctype="multipart/form-data" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Марка</label>
+                    <div class="relative">
+                        <select asp-for="BrandId" asp-items="Model.Brands" class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 pl-4 pr-10 appearance-none focus:outline-none focus:border-[#701217]">
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Модель</label>
+                    <input asp-for="Model" type="text" placeholder="напр. S1000RR" required class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Класс мотоцикла</label>
+                    <div class="relative">
+                        <select asp-for="CategoryId" asp-items="Model.Categories" class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 pl-4 pr-10 appearance-none focus:outline-none focus:border-[#701217]">
+                        </select>
+                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Год выпуска</label>
+                    <input asp-for="Year" type="number" placeholder="2024" required min="1900" max="2026" class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Объем двигателя (куб.см)</label>
+                    <input asp-for="EngineDisplacement" type="number" placeholder="1000" required class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+                </div>
+                <div>
+                    <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Цена ($)</label>
+                    <input asp-for="Price" type="number" placeholder="15000" required min="0" class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+                </div>
+            </div>
+
+            <div>
+                <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Фотография</label>
+                <input asp-for="ImageUpload" type="file" accept="image/*" class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217] file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-label-bold file:bg-[#7da1b1] file:text-[#0f1617] hover:file:bg-[#9db9c9]">
+            </div>
+
+            <div>
+                <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Описание состояния и доработок</label>
+                <textarea asp-for="Description" rows="5" placeholder="Полный выхлоп, прошивка, новое сцепление..." required class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#701217] hover:bg-[#852224] text-[#cce0dd] font-label-bold text-label-bold uppercase tracking-wider py-4 rounded-DEFAULT transition-transform hover:-translate-y-0.5">
+                Опубликовать
+            </button>
+        </form>
+    </div>
+</section>

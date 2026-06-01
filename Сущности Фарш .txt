@@ -1,0 +1,89 @@
+Пользователи
+Users {
+	Userid (PK)
+	Username (string)
+	Email (string)
+	PasswordHash (string)
+	Role (string) (Enum: User, Dealer, Admin)
+	AvatarUrl (string)
+	Location (string)
+	Rating (decimal (3,2))
+	ReviewsCount (int)
+	CreatedAt (timestamp)
+}
+
+Справочники
+ 	Brands {
+	Brandid (PK)
+	Name (string)
+}
+
+Categories {
+	idCategory (PK)
+	Name (string) (Enum: Sport, Naked, Adventure, Cruiser и т.д.)
+}
+
+Мотоциклы (Объявления и ТТХ)
+	MotorcycleSpecs {
+	Specid (PK)
+	idBrand (FK)
+	idCategory (FK)
+	Model (string)
+	Year (int)
+	Mileage (int)
+	Condition (string) (Enum: New, Used, NeedsRepair)
+	EngineDisplacement (int)
+	EnginePower (decimal (6,2))
+	EngineType (string)
+	Transmission (string)
+	DriveType (string)
+	Color (string)
+	VIN (string)
+} многие к одному бренду и одной категории
+
+Listings {
+	idListing (PK)
+	idSeller (FK) -> ссылается на idUser
+	idSpec (FK) -> ссылается на idSpec (UNIQUE)
+	Title (string)
+	Description (text)
+	Price (decimal (18,2))
+	Currency (string)
+	Status (string) (Enum: Active, Moderation, Sold, Archived)
+	Location (string)
+	ViewsCount (int)
+	CreatedAt (timestamp)
+	UpdatedAt (timestamp)
+} многие к одному продавцу (idSeller), один к одному с характеристиками (idSpec)
+
+ListingImages {
+	idImage (PK)
+	idListing (FK)
+	ImageUrl (string)
+	IsMain (bool)
+	UploadedAt (timestamp)
+} многие к одному объявлению
+
+Взаимодействие пользователей
+	SavedListings {
+	idUser (PK/FK)
+	idListing (PK/FK)
+	SavedAt (timestamp)
+} таблица связей: многие ко многим (пользователь <-> объявление)
+
+Chats {
+	idChat (PK)
+	idListing (FK)
+	idBuyer (FK) -> ссылается на idUser
+	idSeller (FK) -> ссылается на idUser
+	CreatedAt (timestamp)
+} многие к одному объявлению, многие к одному покупателю и продавцу
+
+Messages {
+	idMessage (PK)
+	idChat (FK)
+	idSender (FK) -> ссылается на idUser
+	Text (text)
+	IsRead (bool)
+	SentAt (timestamp)
+} многие к одному чату

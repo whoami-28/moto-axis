@@ -1,0 +1,27 @@
+﻿@model FarshGenerator.Models.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<section class="py-20 max-w-md mx-auto px-6 h-[80vh] flex flex-col justify-center">
+    <div class="bg-[#395462]/90 p-10 rounded-DEFAULT border-t border-[#7da1b1]/50 shadow-2xl">
+        <h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mb-2">Вход</h1>
+        <p class="font-body-md text-on-surface-variant mb-8">С возвращением в MOTO-AXIS.</p>
+
+        <form asp-action="Login" method="post" class="space-y-6">
+            <div asp-validation-summary="ModelOnly" class="text-[#701217] font-bold"></div>
+            <div>
+                <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Email</label>
+                <input asp-for="Email" type="email" required class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+            </div>
+            <div>
+                <label class="font-label-sm text-on-secondary-container mb-1 uppercase block">Пароль</label>
+                <input asp-for="Password" type="password" required class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+            </div>
+            <button type="submit" class="w-full bg-[#701217] hover:bg-[#852224] text-[#cce0dd] font-label-bold uppercase py-4 rounded-DEFAULT transition-transform hover:-translate-y-0.5">
+                Войти
+            </button>
+        </form>
+        <p class="mt-6 text-center text-on-surface-variant">Нет аккаунта? <a asp-action="Register" class="text-[#7da1b1] hover:underline">Создать</a></p>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FarshGenerator.Models.Listing>
+@{
+    ViewData["Title"] = "Каталог";
+}
+
+<section class="max-w-container-max mx-auto px-6 py-12">
+    <div class="flex justify-between items-end mb-8 border-b border-[#395462] pb-4">
+        <h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight">Каталог</h1>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-8">
+        <aside class="w-full md:w-64 space-y-6">
+            <div class="bg-[#395462]/50 p-6 rounded-DEFAULT border-t border-[#7da1b1]/30">
+                <h4 class="font-label-bold text-label-bold uppercase text-on-surface mb-4">Фильтры</h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="font-label-sm text-label-sm text-on-secondary-container mb-1 uppercase block">Поиск</label>
+                        <input type="text" placeholder="Поиск модели..." class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-2 px-3 text-sm focus:border-[#701217] outline-none">
+                    </div>
+                    <div>
+                        <label class="font-label-sm text-label-sm text-on-secondary-container mb-1 uppercase block">Класс</label>
+                        <select class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-2 px-3 text-sm">
+                            <option>Все классы</option>
+                            <option>Спорт</option>
+                            <option>Нейкед</option>
+                            <option>Эндуро</option>
+                        </select>
+                    </div>
+                    <button class="w-full mt-4 bg-[#7da1b1] hover:bg-[#9db9c9] text-[#0f1617] font-label-bold text-label-bold uppercase py-2 px-4 rounded-DEFAULT transition-colors">Применить</button>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach (var bike in Model)
+            {
+                // Достаем картинку из новой связанной таблицы
+                var mainImg = bike.Images.FirstOrDefault(i => i.IsMain)?.ImageUrl ?? bike.Images.FirstOrDefault()?.ImageUrl ?? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80";
+
+                <article class="relative group rounded-DEFAULT overflow-hidden border-t border-[#7da1b1]/30 bg-[#395462] flex flex-col h-[350px]">
+                    <div class="relative h-48 w-full overflow-hidden">
+                        <img src="@mainImg" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="bg-[#0f1617] text-[#cce0dd] font-label-sm text-label-sm px-2 py-0.5 uppercase rounded-sm border border-[#7da1b1]/30">@bike.Spec.Category.Name</span>
+                        </div>
+                        <h3 class="font-label-bold text-label-bold text-on-surface uppercase tracking-tight mb-auto">@bike.Spec.Brand.Name @bike.Spec.Model</h3>
+
+                        <div class="flex justify-between items-center bg-[#0f1617]/50 px-2 py-1 mb-4 mt-2">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Объем</span>
+                            <span class="font-label-bold text-label-bold text-on-surface">@bike.Spec.EngineDisplacement cc</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-t border-[#0f1617] pt-4">
+                            <span class="font-body-lg text-body-lg text-[#7da1b1] font-bold">@bike.Price.ToString("N0") @bike.Currency</span>
+                            <a asp-action="TechSpecs" asp-route-id="@bike.Id" class="bg-[#701217] hover:bg-[#852224] text-[#cce0dd] px-3 py-1 font-label-bold text-sm uppercase rounded-DEFAULT transition-colors">ТТХ</a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</section>
