@@ -3,113 +3,96 @@
     ViewData["Title"] = "Главная";
 }
 
-<section class="relative w-full overflow-hidden bg-surface flex items-center justify-center min-h-[819px]">
-    <img alt="Hero Image" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1920&q=80"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-[#0f1617] via-transparent to-[#0f1617]/50"></div>
-    <div class="relative z-10 max-w-container-max mx-auto px-6 w-full flex flex-col items-center text-center mt-12 mb-24">
-        <h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight mb-6">
-            Найди свой предел
-        </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
-            Агрегатор высокопроизводительных машин. Фильтруй по ТТХ, доминируй на дороге.
-        </p>
+<section class="relative bg-[#0f1617] border-b border-[#395462] overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1920&auto=format&fit=crop" alt="Motorcycle background" class="w-full h-full object-cover opacity-30 grayscale">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0f1617] via-[#0f1617]/80 to-transparent"></div>
+    </div>
 
-        <div class="bg-[#395462]/90 backdrop-blur-md p-6 rounded-DEFAULT border-t border-[#7da1b1]/50 w-full max-w-4xl shadow-2xl">
-            <form class="grid grid-cols-1 md:grid-cols-3 gap-4" asp-action="Browse" method="get">
-                <div class="flex flex-col text-left">
-                    <label class="font-label-sm text-label-sm text-on-secondary-container mb-1 uppercase tracking-wider">Марка</label>
-                    <div class="relative">
-                        <select class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface rounded-DEFAULT py-3 pl-4 pr-10 appearance-none focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md">
-                            <option>Любая марка</option>
-                            <option>Ducati</option>
-                            <option>Yamaha</option>
-                            <option>BMW</option>
-                        </select>
-                        <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+    <div class="relative z-10 max-w-container-max mx-auto px-6 py-24 md:py-32">
+        <div class="max-w-4xl">
+            <h1 class="font-headline-xl md:text-display-md text-[#cce0dd] uppercase tracking-tight leading-none mb-6">
+                Найди свой <span class="text-[#7da1b1]">предел</span>
+            </h1>
+            <p class="font-body-lg md:text-title-lg text-[#b3d1cb] mb-12 max-w-xl">
+                Агрегатор высокопроизводительных мотоциклов. От трековых ракет до бескомпромиссных стритфайтеров.
+            </p>
+
+            <div class="bg-[#395462]/60 p-6 rounded-DEFAULT border border-[#7da1b1]/30 backdrop-blur-md">
+                <form asp-action="Browse" method="get" class="flex flex-col gap-4">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-grow">
+                            <input name="SearchQuery" type="text" placeholder="Поиск по модели или тексту..." class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm px-4 focus:outline-none focus:border-[#701217]">
+                        </div>
+                        <div class="w-full md:w-56 relative">
+                            <select name="BrandId" asp-items="ViewBag.Brands" class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm pl-4 pr-10 appearance-none focus:outline-none focus:border-[#701217]">
+                                <option value="">Любая марка</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#b3d1cb] pointer-events-none">expand_more</span>
+                        </div>
+                        <div class="w-full md:w-56 relative">
+                            <select name="CategoryId" asp-items="ViewBag.Categories" class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm pl-4 pr-10 appearance-none focus:outline-none focus:border-[#701217]">
+                                <option value="">Любой класс</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#b3d1cb] pointer-events-none">expand_more</span>
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-col text-left">
-                    <label class="font-label-sm text-label-sm text-on-secondary-container mb-1 uppercase tracking-wider">Модель</label>
-                    <input class="w-full bg-[#0f1617] border border-[#7da1b1] text-on-surface placeholder-on-surface-variant/50 rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md" placeholder="напр. Panigale V4" type="text"/>
-                </div>
-                <div class="flex flex-col justify-end">
-                    <button class="w-full bg-[#701217] hover:bg-[#852224] text-[#cce0dd] font-label-bold text-label-bold uppercase tracking-wider py-3 px-6 rounded-DEFAULT transition-transform duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2" type="submit">
-                        <span class="material-symbols-outlined text-[20px]">search</span>
-                        <span>Поиск</span>
-                    </button>
-                </div>
-            </form>
+
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <input name="MinPrice" type="number" placeholder="Цена от ($)" class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm px-4 focus:outline-none focus:border-[#701217]">
+                            <input name="MaxPrice" type="number" placeholder="Цена до ($)" class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm px-4 focus:outline-none focus:border-[#701217]">
+                            <input name="MinYear" type="number" placeholder="Год от" class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm px-4 focus:outline-none focus:border-[#701217]">
+                            <input name="MaxYear" type="number" placeholder="Год до" class="w-full h-12 bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-sm px-4 focus:outline-none focus:border-[#701217]">
+                        </div>
+                        <button type="submit" class="h-12 w-full md:w-auto bg-[#7da1b1] hover:bg-[#9db9c9] text-[#0f1617] font-label-bold uppercase px-10 rounded-sm transition-colors whitespace-nowrap">
+                            Найти
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="max-w-container-max mx-auto px-6 py-24">
-    <div class="flex justify-between items-end mb-12 border-b border-[#395462] pb-4">
-        <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Избранные модели</h2>
-        <a asp-action="Browse" class="font-label-bold text-label-bold text-[#7da1b1] hover:text-on-surface uppercase tracking-wider flex items-center transition-colors">
+<section class="max-w-container-max mx-auto px-6 py-20">
+    <div class="flex justify-between items-end mb-10 border-b border-[#395462] pb-4">
+        <h2 class="font-headline-lg text-[#cce0dd] uppercase tracking-tight">Последние поступления</h2>
+        <a asp-action="Browse" class="font-label-bold text-[#7da1b1] hover:text-[#cce0dd] uppercase flex items-center transition-colors">
             Смотреть все <span class="material-symbols-outlined ml-1">arrow_forward</span>
         </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
-        @{
-            int index = 0;
-            foreach (var bike in Model)
-            {
-                var mainImage = bike.Images.FirstOrDefault(i => i.IsMain)?.ImageUrl ?? bike.Images.FirstOrDefault()?.ImageUrl ?? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80";
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @foreach (var bike in Model)
+        {
+            var mainImg = bike.Images.FirstOrDefault(i => i.IsMain)?.ImageUrl ?? bike.Images.FirstOrDefault()?.ImageUrl ?? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80";
 
-                if (index == 0) // Большая карточка
-                {
-                    <article class="md:col-span-8 md:row-span-2 relative group rounded-DEFAULT overflow-hidden border-t border-[#7da1b1]/30 bg-[#395462]">
-                        <img alt="@bike.Spec.Brand.Name @bike.Spec.Model" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500" src="@mainImage" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0f1617] via-[#0f1617]/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8 w-full">
-                            <div class="flex items-center space-x-3 mb-4">
-                                <span class="bg-[#395462] text-[#cce0dd] font-label-sm text-label-sm px-2 py-1 uppercase rounded-sm border border-[#7da1b1]/30">@bike.Spec.Condition</span>
-                                <span class="bg-[#395462] text-[#cce0dd] font-label-sm text-label-sm px-2 py-1 uppercase rounded-sm border border-[#7da1b1]/30">@bike.Spec.Category.Name</span>
-                            </div>
-                            <h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight mb-2">@bike.Spec.Brand.Name @bike.Spec.Model</h3>
-                            
-                            <div class="grid grid-cols-2 gap-x-8 gap-y-2 mt-4 border-l-2 border-[#701217] pl-4">
-                                <div class="flex justify-between items-center bg-[#0f1617]/50 px-2 py-1">
-                                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Двигатель</span>
-                                    <span class="font-label-bold text-label-bold text-on-surface">@bike.Spec.EngineDisplacement cc</span>
-                                </div>
-                                <div class="flex justify-between items-center bg-[#395462]/50 px-2 py-1">
-                                    <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Мощность</span>
-                                    <span class="font-label-bold text-label-bold text-on-surface">@bike.Spec.EnginePower л.с.</span>
-                                </div>
-                            </div>
-                            <div class="mt-6 flex justify-between items-center">
-                                <span class="font-headline-md text-headline-md text-on-surface">@bike.Price.ToString("N0") @bike.Currency</span>
-                                <a asp-action="TechSpecs" asp-route-id="@bike.Id" class="border border-[#7da1b1] text-[#7da1b1] hover:bg-[#7da1b1] hover:text-[#0f1617] font-label-bold text-label-bold uppercase py-2 px-4 rounded-DEFAULT transition-colors">Подробнее</a>
-                            </div>
+            <article class="relative group rounded-DEFAULT overflow-hidden border-t border-[#7da1b1]/50 bg-[#395462] flex flex-col h-[420px] shadow-lg">
+                <div class="relative h-56 w-full overflow-hidden">
+                    <img src="@mainImg" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute top-4 right-4 bg-[#701217] text-white font-label-bold px-3 py-1 uppercase rounded-sm shadow-md">
+                        @bike.Spec.Year
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[#7da1b1] font-label-sm uppercase tracking-wider">@bike.Spec.Category.Name</span>
+                        <span class="text-[#b3d1cb] font-label-sm">@bike.Spec.EngineDisplacement cc</span>
+                    </div>
+                    <h3 class="font-headline-md text-[#cce0dd] uppercase tracking-tight mb-auto leading-tight">@bike.Spec.Brand.Name <br /><span class="text-[#b3d1cb]">@bike.Spec.Model</span></h3>
+
+                    <div class="flex justify-between items-end mt-4">
+                        <div>
+                            <p class="font-label-sm text-[#b3d1cb] uppercase mb-1">Цена</p>
+                            <span class="font-title-lg text-[#7da1b1] font-bold">@bike.Price.ToString("N0") @bike.Currency</span>
                         </div>
-                    </article>
-                }
-                else // Маленькие карточки
-                {
-                    <article class="md:col-span-4 relative group rounded-DEFAULT overflow-hidden border-t border-[#7da1b1]/30 bg-[#395462]">
-                        <img alt="@bike.Spec.Brand.Name @bike.Spec.Model" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500 grayscale group-hover:grayscale-0" src="@mainImage" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0f1617] to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 w-full">
-                            <div class="flex items-center space-x-2 mb-2">
-                                <span class="bg-[#395462] text-[#cce0dd] font-label-sm text-label-sm px-2 py-0.5 uppercase rounded-sm border border-[#7da1b1]/30">@bike.Spec.Condition</span>
-                            </div>
-                            <h3 class="font-label-bold text-label-bold text-on-surface uppercase tracking-tight mb-1">@bike.Spec.Brand.Name @bike.Spec.Model</h3>
-                            <div class="flex justify-between items-center bg-[#0f1617]/50 px-2 py-1 mb-3">
-                                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Объем</span>
-                                <span class="font-label-bold text-label-bold text-on-surface">@bike.Spec.EngineDisplacement cc</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-body-lg text-body-lg text-on-surface font-bold">@bike.Price.ToString("N0") @bike.Currency</span>
-                                <a asp-action="TechSpecs" asp-route-id="@bike.Id" class="material-symbols-outlined text-[#7da1b1] hover:text-white transition-colors">chevron_right</a>
-                            </div>
-                        </div>
-                    </article>
-                }
-                index++;
-            }
+                        <a asp-action="TechSpecs" asp-route-id="@bike.Id" class="bg-[#0f1617] hover:bg-[#7da1b1] hover:text-[#0f1617] text-[#cce0dd] border border-[#7da1b1] px-5 py-2 font-label-bold text-sm uppercase rounded-DEFAULT transition-colors">
+                            Обзор
+                        </a>
+                    </div>
+                </div>
+            </article>
         }
     </div>
 </section>

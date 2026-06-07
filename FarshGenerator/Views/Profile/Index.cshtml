@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FarshGenerator.Models.Listing>
+@{
+    ViewData["Title"] = "Мой профиль";
+}
+
+<section class="max-w-container-max mx-auto px-6 py-12">
+    <div class="flex justify-between items-end mb-8 border-b border-[#395462] pb-4">
+        <h1 class="font-headline-xl text-headline-xl text-[#cce0dd] uppercase tracking-tight">Мои объявления</h1>
+        <a asp-controller="Home" asp-action="Sell" class="bg-[#701217] hover:bg-[#852224] text-[#cce0dd] font-label-bold uppercase py-2 px-6 rounded-DEFAULT transition-colors">
+            Добавить
+        </a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="bg-[#395462]/30 p-10 text-center rounded-DEFAULT border border-[#7da1b1]/30">
+            <p class="font-body-lg text-[#b3d1cb] mb-4">У вас пока нет активных объявлений.</p>
+            <a asp-controller="Home" asp-action="Sell" class="text-[#7da1b1] hover:underline font-label-bold uppercase tracking-wider">Разместить первый мотоцикл</a>
+        </div>
+    }
+    else
+    {
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach (var bike in Model)
+            {
+                var mainImg = bike.Images.FirstOrDefault(i => i.IsMain)?.ImageUrl ?? bike.Images.FirstOrDefault()?.ImageUrl ?? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80";
+
+                <article class="relative group rounded-DEFAULT overflow-hidden border border-[#7da1b1]/30 bg-[#395462]/50 flex flex-col">
+                    <div class="relative h-48 w-full overflow-hidden">
+                        <img src="@mainImg" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                        @if (bike.Status != "Active")
+                        {
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                                <span class="bg-[#0f1617] text-[#cce0dd] font-label-bold px-4 py-2 uppercase border border-[#7da1b1]/50">@bike.Status</span>
+                            </div>
+                        }
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-label-bold text-label-bold text-[#cce0dd] uppercase tracking-tight">@bike.Spec.Brand.Name @bike.Spec.Model</h3>
+                            <span class="font-label-bold text-[#7da1b1]">@bike.Price.ToString("N0") @bike.Currency</span>
+                        </div>
+                        <div class="flex items-center space-x-4 mt-auto pt-4 border-t border-[#395462]">
+                            <a asp-action="Edit" asp-route-id="@bike.Id" class="text-[#7da1b1] hover:text-[#cce0dd] font-label-sm uppercase flex items-center transition-colors">
+                                <span class="material-symbols-outlined text-[18px] mr-1">edit</span> Изменить
+                            </a>
+                            <form asp-action="Delete" asp-route-id="@bike.Id" method="post" class="m-0" onsubmit="return confirm('Удалить объявление навсегда?');">
+                                <button type="submit" class="text-[#ffb4ab] hover:text-[#ffdad6] font-label-sm uppercase flex items-center transition-colors">
+                                    <span class="material-symbols-outlined text-[18px] mr-1">delete</span> Удалить
+                                </button>
+                            </form>
+                            <a asp-controller="Home" asp-action="TechSpecs" asp-route-id="@bike.Id" class="ml-auto text-[#b3d1cb] hover:text-[#cce0dd] transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">visibility</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>

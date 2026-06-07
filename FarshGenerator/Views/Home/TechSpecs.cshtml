@@ -5,7 +5,7 @@
 }
 
 <section class="py-16 max-w-container-max mx-auto px-6">
-    <a asp-action="Browse" class="font-label-bold text-[#7da1b1] hover:text-on-surface uppercase flex items-center mb-8 transition-colors">
+    <a asp-action="Browse" class="font-label-bold text-[#7da1b1] hover:text-[#cce0dd] uppercase flex items-center mb-8 transition-colors">
         <span class="material-symbols-outlined mr-1">arrow_back</span> Назад в каталог
     </a>
 
@@ -18,43 +18,57 @@
             </div>
         </div>
 
-        <div class="flex flex-col justify-center">
-            <h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight mb-2">
+        <div class="flex flex-col">
+            <h1 class="font-headline-xl text-[#cce0dd] uppercase tracking-tight mb-2">
                 @Model.Spec.Brand.Name <span class="text-[#7da1b1]">@Model.Spec.Model</span>
             </h1>
-            <p class="font-headline-md text-on-surface-variant mb-8">@Model.Price.ToString("N0") @Model.Currency</p>
+            <p class="font-headline-md text-[#b3d1cb] mb-8">@Model.Price.ToString("N0") @Model.Currency</p>
 
             <h3 class="font-label-bold uppercase text-[#7da1b1] border-b border-[#395462] pb-2 mb-4">Технические данные</h3>
-            <div class="grid grid-cols-1 border-l-4 border-[#701217]">
-                <div class="flex justify-between items-center bg-[#0f1617]/80 px-4 py-3">
-                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Мощность</span>
-                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.EnginePower л.с.</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mb-8">
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase">Мощность</p>
+                    <p class="font-label-bold text-[#cce0dd] text-lg">@Model.Spec.EnginePower л.с.</p>
                 </div>
-                <div class="flex justify-between items-center bg-[#395462]/60 px-4 py-3">
-                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Объем двигателя</span>
-                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.EngineDisplacement cc</span>
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase">Объем двигателя</p>
+                    <p class="font-label-bold text-[#cce0dd] text-lg">@Model.Spec.EngineDisplacement cc</p>
                 </div>
-                <div class="flex justify-between items-center bg-[#0f1617]/80 px-4 py-3">
-                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Привод</span>
-                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.DriveType</span>
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase">Привод</p>
+                    <p class="font-label-bold text-[#cce0dd] text-lg">@Model.Spec.DriveType</p>
                 </div>
-                <div class="flex justify-between items-center bg-[#395462]/60 px-4 py-3">
-                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Трансмиссия</span>
-                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.Transmission</span>
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase">Трансмиссия</p>
+                    <p class="font-label-bold text-[#cce0dd] text-lg">@Model.Spec.Transmission</p>
                 </div>
-                <div class="flex justify-between items-center bg-[#0f1617]/80 px-4 py-3">
-                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Год выпуска</span>
-                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.Year</span>
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase">Год выпуска</p>
+                    <p class="font-label-bold text-[#cce0dd] text-lg">@Model.Spec.Year</p>
                 </div>
-                <div class="flex justify-between items-center bg-[#395462]/60 px-4 py-3">
-                    <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Пробег</span>
-                    <span class="font-label-bold text-on-surface text-lg">@Model.Spec.Mileage км</span>
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase">Пробег</p>
+                    <p class="font-label-bold text-[#cce0dd] text-lg">@Model.Spec.Mileage км</p>
                 </div>
             </div>
 
-            <button class="mt-10 bg-[#7da1b1] hover:bg-[#9db9c9] text-[#0f1617] font-label-bold uppercase py-4 rounded-DEFAULT transition-colors w-full flex justify-center items-center">
-                <span class="material-symbols-outlined mr-2">mail</span> Связаться с продавцом (@Model.Seller.Username)
-            </button>
+            <h3 class="font-label-bold uppercase text-[#7da1b1] border-b border-[#395462] pb-2 mb-4">Описание от продавца</h3>
+            <div class="bg-[#395462]/30 p-4 border border-[#7da1b1]/30 rounded-sm mb-8">
+                <p class="font-body-md text-[#cce0dd] whitespace-pre-wrap">@Model.Description</p>
+            </div>
+
+            <div class="mt-auto bg-[#0f1617] border border-[#7da1b1]/50 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
+                <div>
+                    <p class="font-label-sm text-[#b3d1cb] uppercase mb-1">Продавец</p>
+                    <p class="font-label-bold text-lg text-[#cce0dd] flex items-center">
+                        <span class="material-symbols-outlined mr-2">person</span> @Model.Seller.Username
+                    </p>
+                    <p class="font-body-sm text-[#7da1b1] mt-1"><a href="mailto:@Model.Seller.Email">@Model.Seller.Email</a></p>
+                </div>
+                <a asp-action="SellerProfile" asp-route-id="@Model.SellerId" class="mt-4 sm:mt-0 bg-[#395462] hover:bg-[#7da1b1] text-[#cce0dd] hover:text-[#0f1617] font-label-bold uppercase py-2 px-6 rounded-DEFAULT transition-colors">
+                    Профиль продавца
+                </a>
+            </div>
         </div>
     </div>
 </section>

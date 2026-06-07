@@ -1,54 +1,88 @@
 ﻿<!DOCTYPE html>
-<html class="dark" lang="ru">
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MOTO-AXIS</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lexend:wght@700;800&display=swap" rel="stylesheet" />
-    <script id="tailwind-config">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script>
         tailwind.config = {
-        darkMode: "class",
         theme: {
         extend: {
-        colors: {
-        "surface": "#051615",
-        "background": "#051615",
-        "on-background": "#d3e7e4",
-        "on-surface": "#d3e7e4",
-        "on-surface-variant": "#ddc0bd"
-        },
         fontFamily: {
-        "headline": ["lexend"],
-        "body": ["inter"]
+        sans: ['Roboto Condensed', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
+        },
+        fontSize: {
+        'title-lg': ['22px', '28px'],
+        'title-md': ['16px', '24px'],
+        'body-md': ['14px', '20px'],
+        'label-lg': ['14px', '20px'],
+        },
+        maxWidth: {
+        'container-max': '1600px',
         }
         }
         }
         }
     </script>
     <style>
-        body {
-        background-color: #0f1617;
-        font-family: 'Inter', sans-serif;
+        .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
-<body class="text-on-background antialiased flex flex-col min-h-screen">
-    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
-        <div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
-            <div class="text-2xl font-black italic text-red-600">
-                <a href="/">MOTO-AXIS</a>
+<body class="bg-[#0f1617] text-[#cce0dd] min-h-screen flex flex-col font-sans antialiased selection:bg-[#701217] selection:text-white">
+
+    <header class="bg-[#0f1617]/95 border-b border-[#395462] sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-container-max mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-12">
+                <a asp-controller="Home" asp-action="Index" class="flex items-center group">
+                    <div class="w-10 h-10 bg-[#701217] flex items-center justify-center transform -skew-x-12 group-hover:scale-105 transition-transform">
+                        <span class="font-display font-bold text-white text-xl transform skew-x-12">M</span>
+                    </div>
+                    <span class="ml-3 font-display font-bold text-title-lg tracking-widest uppercase text-[#cce0dd]">Moto-Axis</span>
+                </a>
+
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a asp-controller="Home" asp-action="Browse" class="font-label-bold text-label-lg text-[#cce0dd] hover:text-[#7da1b1] uppercase tracking-wider transition-colors duration-200">Каталог</a>
+                    @if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <a asp-controller="Home" asp-action="Sell" class="font-label-bold text-label-lg text-[#7da1b1] hover:text-[#9db9c9] uppercase tracking-wider transition-colors duration-200 flex items-center">
+                            <span class="material-symbols-outlined mr-1 text-[18px]">add_circle</span> Продать
+                        </a>
+                    }
+                </nav>
             </div>
-            <nav class="hidden md:flex space-x-8 font-bold uppercase tracking-tighter text-sm">
-                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/Browse">Каталог</a>
-                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/Sell">Продать</a>
-                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/TechSpecs">ТТХ</a>
-                <a class="text-slate-400 hover:text-slate-100 transition-colors" href="/Home/Messages">Сообщения</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <button class="text-red-600 hover:text-red-400 p-2">
-                    <span class="material-symbols-outlined">account_circle</span>
+
+            <div class="flex items-center space-x-6">
+                <div class="hidden lg:flex items-center space-x-6">
+                    @if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <div class="flex items-center space-x-4">
+                            <a asp-controller="Profile" asp-action="Index" class="font-label-bold text-label-lg uppercase text-[#b3d1cb] hover:text-[#cce0dd] transition-colors flex items-center group">
+                                <span class="material-symbols-outlined mr-1 text-[18px] group-hover:text-[#7da1b1] transition-colors">person</span>
+                                @User.Identity.Name
+                            </a>
+                            <a asp-controller="Account" asp-action="Logout" class="border border-[#7da1b1] text-[#7da1b1] hover:bg-[#7da1b1] hover:text-[#0f1617] font-label-bold text-label-lg uppercase tracking-wider py-1.5 px-4 rounded-sm transition-colors">
+                                Выход
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="font-label-bold text-label-lg text-[#cce0dd] hover:text-[#7da1b1] uppercase tracking-wider transition-colors duration-200">Вход</a>
+                        <a asp-controller="Account" asp-action="Register" class="bg-[#7da1b1] hover:bg-[#9db9c9] text-[#0f1617] font-label-bold text-label-lg uppercase tracking-wider py-2 px-5 rounded-sm transition-colors">
+                            Регистрация
+                        </a>
+                    }
+                </div>
+
+                <button class="lg:hidden text-[#cce0dd] hover:text-[#7da1b1] p-2">
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
             </div>
         </div>
@@ -58,20 +92,41 @@
         @RenderBody()
     </main>
 
-    <footer class="bg-slate-950 border-t border-slate-800 py-12">
-        <div class="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-lg font-black text-slate-100 italic">MOTO-AXIS</div>
-            <nav class="flex space-x-6 text-xs uppercase tracking-widest text-slate-500 font-bold">
-                <a class="hover:text-red-500" href="/Home/Privacy">Конфиденциальность</a>
-                <a class="hover:text-red-500" href="#">Поддержка</a>
-                <a class="hover:text-red-500" href="#">Дилеры</a>
-            </nav>
-            <div class="text-xs uppercase tracking-widest text-slate-500">
-                © 2026 MOTO-AXIS. ИНЖЕНЕРНАЯ ТОЧНОСТЬ.
+    <footer class="bg-[#0f1617] border-t border-[#395462] py-12 mt-auto">
+        <div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center mb-6">
+                    <div class="w-8 h-8 bg-[#701217] flex items-center justify-center transform -skew-x-12">
+                        <span class="font-display font-bold text-white transform skew-x-12">M</span>
+                    </div>
+                    <span class="ml-3 font-display font-bold text-title-md tracking-widest uppercase text-[#cce0dd]">Moto-Axis</span>
+                </div>
+                <p class="font-body-md text-[#b3d1cb] max-w-sm">Агрегатор высокопроизводительных мотоциклов. Платформа для тех, кто ищет свой предел на треке и на дороге.</p>
             </div>
+
+            <div>
+                <h4 class="font-label-bold text-label-lg uppercase text-[#cce0dd] mb-4">Навигация</h4>
+                <ul class="space-y-2">
+                    <li><a asp-controller="Home" asp-action="Browse" class="font-body-md text-[#b3d1cb] hover:text-[#7da1b1] transition-colors">Каталог</a></li>
+                    @if (User?.Identity?.IsAuthenticated ?? false)
+                    {
+                        <li><a asp-controller="Home" asp-action="Sell" class="font-body-md text-[#b3d1cb] hover:text-[#7da1b1] transition-colors">Продать</a></li>
+                    }
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-label-bold text-label-lg uppercase text-[#cce0dd] mb-4">Правовая информация</h4>
+                <ul class="space-y-2">
+                    <li><a asp-controller="Home" asp-action="Privacy" class="font-body-md text-[#b3d1cb] hover:text-[#7da1b1] transition-colors">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-6 mt-12 pt-6 border-t border-[#395462]/50 flex flex-col md:flex-row justify-between items-center">
+            <p class="font-body-md text-[#b3d1cb]/70">&copy; 2026 Moto-Axis. Все права защищены.</p>
         </div>
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html>
+</html> 

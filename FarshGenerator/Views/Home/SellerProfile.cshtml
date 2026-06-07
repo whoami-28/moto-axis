@@ -1,0 +1,35 @@
+﻿@model IEnumerable<FarshGenerator.Models.Listing>
+@{
+    ViewData["Title"] = "Профиль: " + ViewBag.SellerName;
+}
+
+<section class="max-w-container-max mx-auto px-6 py-12">
+    <div class="flex justify-between items-end mb-8 border-b border-[#395462] pb-4">
+        <h1 class="font-headline-xl text-[#cce0dd] uppercase tracking-tight">Продавец: @ViewBag.SellerName</h1>
+    </div>
+    <h2 class="font-title-lg text-[#7da1b1] uppercase mb-6">Активные объявления (@Model.Count())</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach (var bike in Model)
+        {
+            var mainImg = bike.Images.FirstOrDefault(i => i.IsMain)?.ImageUrl ?? bike.Images.FirstOrDefault()?.ImageUrl ?? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&q=80";
+
+            <article class="relative group rounded-DEFAULT overflow-hidden border-t border-[#7da1b1]/30 bg-[#395462] flex flex-col h-[350px]">
+                <div class="relative h-48 w-full overflow-hidden">
+                    <img src="@mainImg" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <span class="bg-[#0f1617] text-[#cce0dd] font-label-sm px-2 py-0.5 uppercase rounded-sm border border-[#7da1b1]/30">@bike.Spec.Category.Name</span>
+                    </div>
+                    <h3 class="font-label-bold text-[#cce0dd] uppercase tracking-tight mb-auto">@bike.Spec.Brand.Name @bike.Spec.Model</h3>
+
+                    <div class="flex justify-between items-center border-t border-[#0f1617] pt-4 mt-4">
+                        <span class="font-body-lg text-[#7da1b1] font-bold">@bike.Price.ToString("N0") @bike.Currency</span>
+                        <a asp-action="TechSpecs" asp-route-id="@bike.Id" class="bg-[#701217] hover:bg-[#852224] text-[#cce0dd] px-3 py-1 font-label-bold text-sm uppercase rounded-DEFAULT transition-colors">ТТХ</a>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</section>

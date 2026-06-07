@@ -23,6 +23,18 @@ namespace FarshGenerator.Models
                 .HasOne(l => l.Spec)
                 .WithOne(s => s.Listing)
                 .HasForeignKey<Listing>(l => l.SpecId);
+
+            modelBuilder.Entity<Listing>()
+                .Property(l => l.Price)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<MotorcycleSpec>()
+                .Property(m => m.EnginePower)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<User>()
+                .Property(u => u.Rating)
+                .HasColumnType("decimal(18,2)");
         }
     }
 }

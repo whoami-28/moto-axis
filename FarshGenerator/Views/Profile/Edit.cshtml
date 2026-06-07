@@ -1,0 +1,46 @@
+﻿@model FarshGenerator.Models.ViewModels.EditListingViewModel
+@{
+    ViewData["Title"] = "Редактировать";
+}
+
+<section class="py-20 max-w-2xl mx-auto px-6">
+    <div class="bg-[#395462]/90 p-10 rounded-DEFAULT border-t border-[#7da1b1]/50 shadow-2xl">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="font-headline-lg text-[#cce0dd] uppercase tracking-tight">Редактирование</h1>
+            <a asp-action="Index" class="text-[#7da1b1] hover:text-[#cce0dd] transition-colors flex items-center">
+                <span class="material-symbols-outlined mr-1">close</span> Отмена
+            </a>
+        </div>
+        <h2 class="font-title-lg text-[#7da1b1] uppercase mb-8">@ViewBag.TitleName</h2>
+
+        <form asp-action="Edit" method="post" class="space-y-6">
+            <input type="hidden" asp-for="Id" />
+
+            <div>
+                <label class="font-label-sm text-[#e3e3e3] mb-1 uppercase block">Цена ($)</label>
+                <input asp-for="Price" type="number" required min="0" class="w-full bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]">
+            </div>
+
+            <div>
+                <label class="font-label-sm text-[#e3e3e3] mb-1 uppercase block">Статус</label>
+                <div class="relative">
+                    <select asp-for="Status" class="w-full bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-DEFAULT py-3 pl-4 pr-10 appearance-none focus:outline-none focus:border-[#701217]">
+                        <option value="Active">Активно (В продаже)</option>
+                        <option value="Sold">Продано</option>
+                        <option value="Archived">В архиве</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#b3d1cb] pointer-events-none">expand_more</span>
+                </div>
+            </div>
+
+            <div>
+                <label class="font-label-sm text-[#e3e3e3] mb-1 uppercase block">Описание</label>
+                <textarea asp-for="Description" rows="5" required class="w-full bg-[#0f1617] border border-[#7da1b1] text-[#cce0dd] rounded-DEFAULT py-3 px-4 focus:outline-none focus:border-[#701217]"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#701217] hover:bg-[#852224] text-[#cce0dd] font-label-bold uppercase py-4 rounded-DEFAULT transition-transform hover:-translate-y-0.5">
+                Сохранить изменения
+            </button>
+        </form>
+    </div>
+</section>
