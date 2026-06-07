@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FarshGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5967795f44e3a8383aa42d7e1f889c2ab946268")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72565c7008803359c591d52cdfadd4ec29db13a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FarshGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FarshGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

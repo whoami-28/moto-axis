@@ -95,7 +95,6 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\refint\FarshGe
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\FarshGenerator.pdb
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\FarshGenerator.genruntimeconfig.cache
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\ref\FarshGenerator.dll
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\FarshGenerator.csproj.AssemblyReference.cache
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\bin\Debug\net10.0\Azure.Core.dll
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\bin\Debug\net10.0\Azure.Identity.dll
