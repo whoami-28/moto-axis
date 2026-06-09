@@ -16,7 +16,7 @@ namespace FarshGenerator.Models
         public string Title { get; set; }
         public string? Description { get; set; }
         public decimal Price { get; set; }
-        public string Currency { get; set; } = "USD";
+        public string Currency { get; set; } = "Br";
         public string Status { get; set; } = "Active";
         public string? Location { get; set; }
         public int ViewsCount { get; set; } = 0;

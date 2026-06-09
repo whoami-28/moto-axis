@@ -39,7 +39,7 @@ namespace FarshGenerator.Models.ViewModels
         public string DriveType { get; set; }
 
         [Required(ErrorMessage = "Укажите цену")]
-        [Range(1, 1000000, ErrorMessage = "Цена должна быть от 1$ до 1 000 000$")]
+        [Range(1, 1000000, ErrorMessage = "Цена должна быть от 1 BYN до 1 000 000 BYN")]
         public decimal Price { get; set; }
 
         [Required(ErrorMessage = "Добавьте описание")]

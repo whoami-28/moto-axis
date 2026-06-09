@@ -175,7 +175,7 @@ namespace FarshGenerator.Controllers
                 Title = $"Продается {viewModel.BikeModel}",
                 Description = viewModel.Description,
                 Price = viewModel.Price,
-                Currency = "USD",
+                Currency = "BYN",
                 Status = "Active",
                 CreatedAt = DateTime.Now
             };

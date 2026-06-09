@@ -25,11 +25,9 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\6q0
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\thei23kcxv-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\bclf73fxwv-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\4n8dg853i5-{0}-bqjiyaj88i-bqjiyaj88i.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\lwyqc0s6cf-{0}-c2jlpeoesf-c2jlpeoesf.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\h3c0vblnzq-{0}-erw9l3u2r3-erw9l3u2r3.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\xled5likj8-{0}-aexeepp0ev-aexeepp0ev.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\oevgnp6sf1-{0}-d7shbmvgxk-d7shbmvgxk.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\syypdthzo5-{0}-ausgxo2sd3-ausgxo2sd3.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\98ny2nghyd-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\pu4my2c6pp-{0}-cosvhxvwiu-cosvhxvwiu.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\rdo19z0ywx-{0}-ub07r2b239-ub07r2b239.gz
@@ -49,11 +47,8 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\788
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\phkacb51ir-{0}-06098lyss8-06098lyss8.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\a3ky53toxz-{0}-nvvlpmu67g-nvvlpmu67g.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\06i1ym2a5a-{0}-s35ty4nyc5-s35ty4nyc5.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\narwpe0d9l-{0}-pj5nd1wqec-pj5nd1wqec.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\j9i7mebi0y-{0}-46ein0sx1k-46ein0sx1k.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\14ram3wa0k-{0}-v0zj4ognzu-v0zj4ognzu.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\z8yka521ek-{0}-37tfw0ft22-37tfw0ft22.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\akquag38x4-{0}-hrwsygsryq-hrwsygsryq.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\40b6hptsuq-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\disgdsanak-{0}-ft3s53vfgj-ft3s53vfgj.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\2bc1o5apuy-{0}-6cfz1n2cew-6cfz1n2cew.gz
@@ -63,7 +58,6 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\3mq
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\jsxf9uij54-{0}-vr1egmr9el-vr1egmr9el.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\2stb4rbk2p-{0}-kbrnm935zg-kbrnm935zg.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\gdyy4qg68j-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\b8v84l22hh-{0}-y7v9cxd14o-y7v9cxd14o.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\8j0optmd92-{0}-notf2xhcfb-notf2xhcfb.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\a42v4pufj9-{0}-h1s4sie4z3-h1s4sie4z3.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\hvx0cvy0kc-{0}-63fj8s7r0e-63fj8s7r0e.gz
@@ -78,10 +72,8 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\igu
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\vrwsfkl22x-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\29j3nzmqs0-{0}-0i3buxo5is-0i3buxo5is.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\mtmmexe29t-{0}-o1o13a6vjx-o1o13a6vjx.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\buqkh2gzn9-{0}-ttgo8qnofa-ttgo8qnofa.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\w90a6t4srs-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\ywsywdrpn7-{0}-muycvpuwrr-muycvpuwrr.gz
-D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\rpnlvlr74a-{0}-87fc7y1x7t-87fc7y1x7t.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\hmhrtvi8x6-{0}-mlv21k5csn-mlv21k5csn.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\a9jbpk3tga-{0}-cmr7twq27a-cmr7twq27a.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\xo3kl3aqm5-{0}-cmr7twq27a-cmr7twq27a.gz
@@ -219,3 +211,11 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\bin\Debug\net10.0\runtimes\win\l
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\bin\Debug\net10.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\bin\Debug\net10.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\FarshGenerator.sourcelink.json
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\lwyqc0s6cf-{0}-w2f27j85is-w2f27j85is.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\syypdthzo5-{0}-ll1uqo4f54-ll1uqo4f54.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\narwpe0d9l-{0}-kjmw95il7u-kjmw95il7u.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\14ram3wa0k-{0}-pnouoo3890-pnouoo3890.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\akquag38x4-{0}-va5dfllxtr-va5dfllxtr.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\b8v84l22hh-{0}-24ybqei71a-24ybqei71a.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\buqkh2gzn9-{0}-pubys9qrnf-pubys9qrnf.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\rpnlvlr74a-{0}-jxkykcyexm-jxkykcyexm.gz
