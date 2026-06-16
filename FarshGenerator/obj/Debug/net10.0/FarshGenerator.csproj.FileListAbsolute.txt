@@ -219,3 +219,4 @@ D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\akq
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\b8v84l22hh-{0}-24ybqei71a-24ybqei71a.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\buqkh2gzn9-{0}-pubys9qrnf-pubys9qrnf.gz
 D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\compressed\rpnlvlr74a-{0}-jxkykcyexm-jxkykcyexm.gz
+D:\05_Other\Repos\FarshGenerator\FarshGenerator\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
